@@ -6,8 +6,7 @@ require('dotenv').config();
 const port = process.env.PORT || 5000;
 
 
-const serviceAccount = require('./doctors-portal-3c0c5-firebase-adminsdk.json');
-
+const serviceAccount = JSON.parse(process.env.FIREBASE_ACCOUNT);
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
